@@ -39,3 +39,12 @@ SELECT `title` as MovieTitle, sum(duration) as TotalWatchTime, (sum(duration)/60
 FROM `default`.`kaggleuk`.`netflixbehavior`
 GROUP BY `title`, DATE_FORMAT(`datetime`, 'yyyy-MM-dd') 
 
+
+
+SELECT `title` as MovieTitle, DATE_FORMAT(`datetime`, 'yyyy-MM-dd') as ViewDate, count(`user_id`) as DailyViewCount, 
+  sum(duration) as TotalWatchTimeSeconds, 
+  (sum(duration)/60) as TotalWatchTimeMinutes, 
+  (sum(duration)/3600) as TotalWatchTimeHours
+FROM `default`.`kaggleuk`.`netflixbehavior`
+GROUP BY `title`, DATE_FORMAT(`datetime`, 'yyyy-MM-dd') 
+
