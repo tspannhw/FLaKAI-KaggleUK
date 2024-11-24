@@ -13,5 +13,11 @@ SELECT `title` as MovieTitle, DATE_FORMAT(`datetime`, 'yyyy-MM-dd') as ViewDate,
   sum(duration) as TotalWatchTimeSeconds, 
   (sum(duration)/60) as TotalWatchTimeMinutes, 
   (sum(duration)/3600) as TotalWatchTimeHours
-FROM `default`.`kaggleuk`.`netflixbehavior`
+FROM TABLE(
+  TUMBLE(TABLE  `default`.`kaggleuk`.`netflixbehavior`, 
+  DESCRIPTOR( $rowtime ), 
+  INTERVAL '1' DAY))
 GROUP BY `title`, DATE_FORMAT(`datetime`, 'yyyy-MM-dd') 
+
+---- 
+  
