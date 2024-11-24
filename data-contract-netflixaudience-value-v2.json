@@ -1,0 +1,12 @@
+{
+  "subject": "netflixaudience-value",
+  "version": 2,
+  "id": 100003,
+  "metadata": {
+    "properties": {
+      "confluent:version": "2"
+    }
+  },
+  "schema": "{\"doc\":\"kaggle uk netflix audience data.\",\"fields\":[{\"doc\":\"row id\",\"name\":\"row_id\",\"type\":\"int\"},{\"doc\":\"datetime of the viewing\",\"logicalType\":\"timestamp-millis\",\"name\":\"datetime\",\"type\":[\"long\",\"null\"]},{\"doc\":\"how long was it watched?\",\"name\":\"duration\",\"type\":[\"double\",\"null\"]},{\"doc\":\"title of the video\",\"name\":\"title\",\"type\":\"string\"},{\"doc\":\"A list of comma-delimited movie/tv genres that apply to the title.\",\"name\":\"genres\",\"type\":[\"string\",\"null\"]},{\"doc\":\"date of the titles release.\",\"logicalType\":\"date\",\"name\":\"release_date\",\"type\":[\"int\",\"null\"]},{\"doc\":\"id of the movie.\",\"name\":\"movie_id\",\"type\":\"string\"},{\"doc\":\"id of the user.\",\"name\":\"user_id\",\"type\":\"string\"}],\"name\":\"audienceviewers\",\"namespace\":\"com.netflix.audience\",\"type\":\"record\"}",
+  "schemaType": "AVRO"
+}
