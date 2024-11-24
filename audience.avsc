@@ -1,0 +1,49 @@
+{
+  "type": "record",
+  "namespace": "com.netflix.audience",
+  "name": "audienceviewers",
+  "doc": "kaggle uk netflix audience data.",
+  "fields": [
+    {
+      "name": "row_id",
+      "type": "int",
+      "doc": "row id"
+    },
+    {
+      "name": "datetime",
+      "type": ["long", "null"],
+      "logicalType": "timestamp-millis", 
+      "doc": "datetime of the viewing"
+    },
+    {
+      "name": "duration",
+      "type": ["double", "null"],
+      "doc": "how long was it watched?"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "doc": "title of the video"
+    },
+    {
+      "name": "genres",
+      "type": ["string", "null"],
+      "doc": "A list of comma-delimited movie/tv genres that apply to the title."
+    },
+    {
+      "name": "release_date",
+      "type": ["string", "null"],
+      "doc": "date of the titles release."
+    },
+    {
+      "name": "movie_id",
+      "type": "string",
+      "doc": "id of the movie."
+    },
+    {
+      "name": "user_id",
+      "type": "string",
+      "doc": "id of the user."
+    }
+  ]
+}
