@@ -32,3 +32,10 @@ GROUP BY `title`, DATE_FORMAT(`datetime`, 'yyyy-MM-dd')
 ---- yyyy-MM-dd
 ---- https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/text/SimpleDateFormat.html
 
+SELECT `title` as MovieTitle, sum(duration) as TotalWatchTime, (sum(duration)/60) as TotalWatchTimeMin, 
+  (sum(duration)/3600) as TotalWatchTimeH, 
+       count(*) as DailyWatchCount,
+       DATE_FORMAT(`datetime`, 'yyyy-MM-dd') as ViewDate
+FROM `default`.`kaggleuk`.`netflixbehavior`
+GROUP BY `title`, DATE_FORMAT(`datetime`, 'yyyy-MM-dd') 
+
