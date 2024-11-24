@@ -32,8 +32,7 @@
     },
     {
       "name": "release_date",
-      "type": ["int", "null"],
-      "logicalType": "date",
+      "type": ["string", "null"],
       "doc": "date of the titles release."
     },
     {
