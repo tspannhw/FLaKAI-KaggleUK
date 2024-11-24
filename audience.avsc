@@ -11,8 +11,7 @@
     },
     {
       "name": "datetime",
-      "type": ["long", "null"],
-      "logicalType": "timestamp-millis", 
+      "type": ["string", "null"],
       "doc": "datetime of the viewing"
     },
     {
