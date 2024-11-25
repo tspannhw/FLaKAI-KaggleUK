@@ -1,0 +1,35 @@
+plugins {
+  id 'java'
+  id "application"
+}
+
+version = "1.0.0"
+
+repositories {
+  mavenCentral()
+  maven {
+       url = uri("https://packages.confluent.io/maven/")
+  }
+}
+
+dependencies {
+  implementation group: 'org.slf4j', name: 'slf4j-nop', version: '1.7.36'
+implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '3.9.0'
+implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: '7.7.1'
+implementation group: 'org.apache.commons', name: 'commons-csv', version: '1.12.0'
+implementation group: 'io.confluent', name: 'kafka-schema-registry-client', version: '7.7.1'
+}
+
+ext {
+  javaMainClass = "producer.Netflix"
+}
+
+application {
+  mainClass.set(javaMainClass)
+}
+
+jar {
+  manifest {
+    attributes "Main-Class": javaMainClass
+  }
+}
