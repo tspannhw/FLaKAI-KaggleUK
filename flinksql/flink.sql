@@ -21,3 +21,19 @@ GROUP BY `title`, DATE_FORMAT(`datetime`, 'yyyy-MM-dd')
 
 ---- 
   
+CREATE TABLE behaviorupdate as (
+SELECT `title` as MovieTitle, avg(duration) as AverageWatchDuration,  count(`user_id`) as NumberofViewers 
+FROM `default`.`kaggleuk`.`netflixbehavior`
+GROUP BY `title`
+)
+
+show create table `behaviorupdate`
+
+describe extended  `default`.`kaggleuk`.`netflixbehavior`
+
+SELECT `title` as MovieTitle, DATE_FORMAT(`datetime`, 'yyyy-MM-dd') as ViewDate, count(`user_id`) as DailyViewCount, 
+  sum(duration) as TotalWatchTimeSeconds, 
+  (sum(duration)/60) as TotalWatchTimeMinutes, 
+  (sum(duration)/3600) as TotalWatchTimeHours
+FROM `default`.`kaggleuk`.`netflixbehavior`
+GROUP BY `title`, DATE_FORMAT(`datetime`, 'yyyy-MM-dd') 
